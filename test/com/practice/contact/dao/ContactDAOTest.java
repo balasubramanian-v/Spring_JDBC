@@ -31,7 +31,7 @@ class ContactDAOTest {
 	@Test
 	void testSave() {		
 		
-		Contact contact=new Contact("praveen","praveen@mailinator.com","Chennai,TN","8248537855");
+		Contact contact=new Contact("yosgesh","yogesh@mailinator.com","Chennai,TN","8248537855");
 		int result =dao.save(contact);
 		
 		assertTrue(result >0);
@@ -71,6 +71,7 @@ class ContactDAOTest {
 		
 		if(listContacts!=null) {
 			System.out.println(listContacts);
+		
 		}
 		
 		
