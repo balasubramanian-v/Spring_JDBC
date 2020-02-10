@@ -6,6 +6,10 @@ public class Contact {
 	private String email;
 	private String address;
 	private String phone;
+	
+	public Contact() {
+		
+	}
 
 	public Contact(Integer id, String name, String email, String address, String phone) {
 		

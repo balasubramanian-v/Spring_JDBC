@@ -2,6 +2,7 @@ package com.practice.contact.dao;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -68,12 +69,17 @@ class ContactDAOTest {
 	@Test
 	void testList() {
 		List<Contact> listContacts=(List<Contact>) dao.list();
+		Iterator<Contact> Iterator = listContacts.iterator();
 		
-		if(listContacts!=null) {
-			System.out.println(listContacts);
-		
+		while(Iterator.hasNext())
+		{
+			System.out.println(Iterator.next());
 		}
-		
+		/*
+		 * if(listContacts!=null) { System.out.println(listContacts.iterator());
+		 * 	 * 
+		 * }
+		 */	
 		
 		assertTrue(! listContacts.isEmpty());
 	}

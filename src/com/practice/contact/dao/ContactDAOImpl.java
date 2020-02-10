@@ -31,14 +31,14 @@ public class ContactDAOImpl implements ContactDAO {
 
 	@Override
 	public int update(Contact c) {
-		String sql="UPDATE contact SET name=?, email=?, address=?, phone=? WHERE contactid=?";
+		String sql="UPDATE contact SET name=?, email=?, address=?, phone=? WHERE id=?";
 		return jdbcTemplate.update(sql,c.getName(),c.getEmail(),c.getAddress(),c.getPhone(),c.getId());
 		 
 	}
 
 	@Override
 	public Contact get(Integer id) {
-		String sql="SELECT * FROM contact WHERE contactid=" + id;
+		String sql="SELECT * FROM contact WHERE id=" + id;
 		
 		ResultSetExtractor<Contact> extractor= new ResultSetExtractor<Contact>() {
 			
@@ -62,7 +62,7 @@ public class ContactDAOImpl implements ContactDAO {
 
 	@Override
 	public int delete(Integer id) {
-		String sql="DELETE FROM contact WHERE contactid="+id;		
+		String sql="DELETE FROM contact WHERE id="+id;		
 		return jdbcTemplate.update(sql);
 	}
 
